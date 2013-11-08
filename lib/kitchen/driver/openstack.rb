@@ -100,7 +100,11 @@ module Kitchen
           :openstack_auth_url => config[:openstack_auth_url]
         }
         optional = [
-          :openstack_tenant, :openstack_region, :openstack_service_name, :metadata
+          :openstack_tenant,
+          :openstack_region,
+          :openstack_service_name,
+          :metadata,
+          :personality
         ]
         optional.each do |o|
           config[o] and server_def[o] = config[o]
