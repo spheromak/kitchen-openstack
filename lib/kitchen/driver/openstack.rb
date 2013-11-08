@@ -103,8 +103,7 @@ module Kitchen
           :openstack_tenant,
           :openstack_region,
           :openstack_service_name,
-          :metadata,
-          :personality
+          :metadata
         ]
         optional.each do |o|
           config[o] and server_def[o] = config[o]
@@ -129,6 +128,7 @@ module Kitchen
         if config[:public_key_path]
           server_def[:public_key_path] = config[:public_key_path]
         end
+	server_def[:personality] = config[:personality] if config[:personality]
         server_def[:key_name] = config[:key_name] if config[:key_name]
         # Can't use the Fog bootstrap and/or setup methods here; they require a
         # public IP address that can't be guaranteed to exist across all

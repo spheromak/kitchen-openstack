@@ -124,7 +124,11 @@ describe Kitchen::Driver::Openstack do
           :openstack_service_name => 'the_service',
           :private_key_path => '/path/to/id_rsa',
           :floating_ip_pool => 'swimmers',
-          :floating_ip => '11111'
+          :floating_ip => '11111',
+	  			:metadata => { 
+	   			  hostname: "foo",
+            fqdn: "foo.localdomain" 
+	  			}
         }
       end
 
